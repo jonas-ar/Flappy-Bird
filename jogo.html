@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="css/flappy.css">
+</head>
+
+<body class="conteudo">
+    <h1>Flappy Bird</h1>
+
+    <div wm-flappy>
+
+        <section class="content">
+            <h2 id="subtitulo">Configurações do jogo</h2>
+            <form id="data">
+
+                <p>
+                    <label>Nome do jogador: </label>
+                    <input id="nome" type="text" placeholder="Seu Nome..." required>
+                </p>
+
+                <p>
+                    <label>Cenário do jogo: </label>
+                    <input type="radio" value="noturno" name="cenario" required> Noturno
+                    <input type="radio" value="diurno" name="cenario" required> Diruno
+                </p>
+
+                <p>
+                    <label>Intervalo entre abertura dos canos: </label>
+                    <input type="radio" name="intervalo" value="facil"> Fácil
+                    <input type="radio" name="intervalo" value="medio" required> Médio
+                    <input type="radio" name="intervalo" value="dificil"> Difícil
+                </p>
+
+                <p>
+                    <label>Distância entre canos: </label>
+                    <input type="radio" name="distancia" value="facil"> Fácil
+                    <input type="radio" name="distancia" value="medio" required> Médio
+                    <input type="radio" name="distancia" value="dificil"> Difícil
+                </p>
+
+                <p>
+                    <label>Velocidade do jogo: </label>
+                    <input type="number" id="velJogo" placeholder="Digite entre 1 e 10" min="1" max="10" required>
+                </p>
+
+                <p>
+                    <label>Personagens: </label>
+                    <select id="personagens">
+                        <option value="kirby">Kirby</option>
+                        <option value="passaro" required>Pássaro</option>
+                        <option value="charizard">Charizard</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label>Tipo do jogo: </label>
+                    <input type="radio" name="tipo" value="real" required> Real
+                    <input type="radio" name="tipo" value="treino" required> Treino
+                </p>
+
+
+                <p>
+                    <label>Velocidade do personagem: </label>
+                    <input type="radio" name="velocidade" value="baixa"> Baixa
+                    <input type="radio" name="velocidade" value="media" required> Média
+                    <input type="radio" name="velocidade" value="rapida"> Rápida
+                </p>
+
+                <p>
+                    <label>Pontuação: </label>
+                    <input type="radio" name="pontuacao" value="1"> 1
+                    <input type="radio" name="pontuacao" value="10" required> 10
+                    <input type="radio" name="pontuacao" value="100"> 100
+                </p>
+
+                <p>
+                    <input type="submit" id="enviar" value="Jogar">
+                </p>
+            </form>
+        </section>
+    </div>
+
+    <script>
+
+        document.querySelector("#data").addEventListener("submit", (evt) => {
+            evt.preventDefault();
+
+            document.getElementById("subtitulo").style.display = "none";
+            document.getElementById("data").style.display = "none";
+
+            let script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "js/flappy.js";
+            document.head.appendChild(script);
+
+        })
+
+    </script>
+</body>
+
+</html>
